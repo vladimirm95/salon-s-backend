@@ -3,6 +3,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
 import authRoutes from './routes/authRoutes.js'
+import appointmentRoutes from './routes/appointmentRoutes.js'
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth', authRoutes)
+app.use('/api/appointments', appointmentRoutes)
 
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', message: 'Salon S backend radi!' })
